@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concrete.Portfolio
+
+@{
+    ViewData["Title"] = "PortfolioAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="card-header bg-transparent border-0 ">
+	<h3 class="text-dark mb-0">Yeni Proje</h3>
+</div>
+
+
+@using (Html.BeginForm("PortfolioAdd", "Portfolio", FormMethod.Post))
+{
+
+	<div class="col-lg-7 col-md-10">
+		<form class="form-group" method="post">
+			<label for="example-text-input" class="form-control-label">Proje</label>
+			@Html.TextBoxFor(c => c.Name, new { @class="form-control" })
+			<br />
+			<label for="example-text-input" class="form-control-label">Image URL</label>
+			@Html.TextBoxFor(c => c.ImageURL, new { @class="form-control" })
+			<br />
+			<label for="example-text-input" class="form-control-label">Image URL</label>
+			@Html.TextBoxFor(c => c.ImageURL2, new { @class="form-control" })
+			<br />
+			<label for="example-text-input" class="form-control-label">GitHub Linki</label>
+			@Html.TextBoxFor(c => c.ProjectLink, new { @class="form-control" })
+			<br />
+			<button class="btn btn-info">Kaydet</button>
+			<br />
+			<br />
+
+		</form>
+	</div>
+}
